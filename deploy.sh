@@ -10,7 +10,13 @@ function exitIfError {
 git pull
 exitIfError "git pull failed"
 
+rm package-lock.json
+rm -rf node_modules
+
 npm i
+exitIfError "npm install failed"
+
+npm run build
 exitIfError "npm install failed"
 
 pm2 kill
