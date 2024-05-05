@@ -16,5 +16,5 @@ exitIfError "npm install failed"
 pm2 kill
 exitIfError "pm2 kill failed"
 
-pm2 start npm --name alumniRun -- dev
+pm2 start npm --name alumniRun -- start
 pm2 save
