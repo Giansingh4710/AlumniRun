@@ -37,6 +37,11 @@ server {
 
 sudo ln -s /etc/nginx/sites-available/alumni.run /etc/nginx/sites-enabled/alumni.run
 sudo rm /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo nginx -t
+sudo nginx -s reload
+
+sudo npm install pm2@latest -g
+sudo pm2 startup systemd
 
 sudo git clone https://github.com/Giansingh4710/AlumniRun /var/www/alumni.run
 
