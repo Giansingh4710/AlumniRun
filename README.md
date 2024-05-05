@@ -20,4 +20,4 @@ sudo ln -s /etc/nginx/sites-available/alumni.run /etc/nginx/sites-enabled/alumni
 
 sudo git clone https://github.com/Giansingh4710/AlumniRun /var/www/alumni.run
 
-pm2 start npm --name alumniRun -- start
+pm2 start npm --name alumniRun -- dev
