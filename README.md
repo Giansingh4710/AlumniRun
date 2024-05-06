@@ -48,11 +48,11 @@ sudo git clone https://github.com/Giansingh4710/AlumniRun /var/www/alumni.run
 cd /var/www/alumni.run
 sudo ./deploy.sh
 
-### How to setup https
+### How to setup https (failed)
 - ```
     sudo ufw allow 'Nginx Full'
     sudo apt install certbot python3-certbot-nginx
-    sudo certbot --nginx -d getshabads.xyz -d www.getshabads.xyz
+    sudo certbot --nginx -d alumni.run -d www.alumni.run
     sudo systemctl status certbot.timer
     sudo ufw delete allow 'Nginx HTTP'
     sudo ufw status
