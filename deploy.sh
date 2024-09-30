@@ -10,9 +10,6 @@ function exitIfError {
 git pull
 exitIfError "git pull failed"
 
-nvm use 16
-exitIfError "nvm use failed"
-
 npm i
 exitIfError "npm install failed"
 
