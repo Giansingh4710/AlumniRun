@@ -1,20 +1,9 @@
 #!/usr/bin/bash
 
-function exitIfError {
-  if [ $? -ne 0 ]; then
-    echo "$1"
-    exit 1
-  fi
-}
+set -e
 
 git pull
-exitIfError "git pull failed"
-
-npm i
-exitIfError "npm install failed"
-
-pm2 kill
-exitIfError "pm2 kill failed"
-
-pm2 start npm --name alumniRun -- start
-pm2 save
+docker build -t alumni-run .
+docker stop alumni-run 2>/dev/null || true
+docker rm alumni-run 2>/dev/null || true
+docker run -d -p 8080:80 --restart unless-stopped --name alumni-run alumni-run
