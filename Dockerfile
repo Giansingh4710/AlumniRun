@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package.json ./
 RUN npm install --no-package-lock
 COPY . .
-RUN npm run build
+RUN NODE_OPTIONS="--max-old-space-size=1024" npm run build
 
 FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
